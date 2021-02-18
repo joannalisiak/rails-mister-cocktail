@@ -26,3 +26,9 @@ ingredients['drinks'].each do |i|
 end
 
 puts "All the ingredients successfully created!"
+
+# 10.times do
+#   Ingredient.create(
+#     name: Faker::Name.name
+#   )
+# end
