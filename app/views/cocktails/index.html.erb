@@ -1,12 +1,14 @@
 <div class="container">
   <h1>Cocktail List</h1>
+  
   <% @cocktails.each do |c| %>
-    <ul>
-      <li>
-        <%= link_to c.name, cocktail_path(c) %>
-      </li>
-    </ul>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to c.name, cocktail_path(c) %>
+    </div>
   <% end %>
 
-  <p><%= link_to "Create a new cocktail", new_cocktail_path %></p>
+
+  <%= link_to new_cocktail_path do %>
+    <i class="fas fa-plus"></i> Create a new cocktail
+  <% end %>
 </div>

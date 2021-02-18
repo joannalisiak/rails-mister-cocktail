@@ -1,6 +1,8 @@
 <div class="container">
   <h1>New Cocktail</h1>
   <%= render 'form', cocktail: @cocktail %>
-
-  <p><%= link_to 'Back to cocktail list', cocktails_path %></p>
+  
+  <%= link_to cocktails_path do %>
+    <i class="fas fa-undo-alt"></i> Back to cocktail list
+  <% end %>
 </div>

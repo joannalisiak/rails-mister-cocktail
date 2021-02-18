@@ -1,14 +1,22 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
-  <%# <p>Ingredients:</p>
-  <% @cocktails.ingredients.each do |i| %>
-    <%# <ul> %>
-      <%# <li> %>
-        <%# <%= i.name %> 
-      <%# </li> %>
-    <%# </ul> %>
-  <%# <% end %> 
+  <p>Doses:</p>
+  <% @cocktail.doses.each do |d| %>
+    <ul>
+      <li>
+        <%= d.ingredient.name %> <%= d.description %> 
+        <%= link_to dose_path(d), method: :delete, data: {confirm: "Are you sure?"} do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
 
-  <p><%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail) %></p>
-  <p><%= link_to "Back to cocktail list", cocktails_path %></p>
+  <%= link_to new_cocktail_dose_path(@cocktail) do %>
+    <i class="fas fa-plus"></i> Add a new dose
+  <% end %>
+
+  <%= link_to cocktails_path do %>
+    <i class="fas fa-undo-alt"></i> Back to cocktail list
+  <% end %>
 </div>
