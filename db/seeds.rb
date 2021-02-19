@@ -7,7 +7,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'faker'
+require 'faker'
 require 'open-uri'
 require 'json'
 
@@ -25,10 +25,11 @@ ingredients['drinks'].each do |i|
   puts "Ingredient #{ingredient.name} succesfully created"
 end
 
-puts "All the ingredients successfully created!"
-
-# 10.times do
-#   Ingredient.create(
+# 5.times do
+#   ingredient = Ingredient.create!(
 #     name: Faker::Name.name
 #   )
+#   puts "#{ingredient.name} successfully created"
 # end
+
+puts "All the ingredients successfully created!"
