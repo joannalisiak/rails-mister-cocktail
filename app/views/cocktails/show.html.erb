@@ -32,4 +32,9 @@
 
   </div>
 
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag 'photo-1536935338788-846bb9981813_f44lec', height: 300, width: 400, crop: :fill %>
+  <% end %>
 </div>

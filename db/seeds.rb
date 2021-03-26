@@ -32,4 +32,10 @@ end
 #   puts "#{ingredient.name} successfully created"
 # end
 
+cocktail_1 = Cocktail.new(name: "Lou's Mojito")
+cocktail_1_picture = URI.open('https://images.unsplash.com/photo-1566733971017-f6a46e832e95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
+cocktail_1.photo.attach(io: cocktail_1_picture, filename: 'mojito.png', content_type: 'image/png')
+dose1_1 = Dose.create!(description: "Add four or five mint leaves for good measure", cocktail: cocktail_1, ingredient: Ingredient.first)
+cocktail_1.save!
+
 puts "All the ingredients successfully created!"
