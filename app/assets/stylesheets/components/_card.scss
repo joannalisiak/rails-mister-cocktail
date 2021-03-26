@@ -8,8 +8,8 @@
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  top: 20px;
+  left: 20px;
 }
 .card-description h2 {
   font-size: 24px;
@@ -26,4 +26,9 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.cocktails {
+  color: white;
+  background-color: $coal;
 }
